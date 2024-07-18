@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fa-html5 {
+    color: #ec6231;
+}
+
+.fa-css3 {
+    color: dodgerblue;
+}
+
+.fa-js {
+    color: #F7DF1E;
+}
+
+.fa-node {
+    color: #68A063;
+}
+
+.fa-angular {
+    color: #DD0031;
+}
+
+.fa-react {
+    color: #61DAFB;
+}
+
+.fa-php {
+    color: #4F5D95;
+}
+
+.fa-python {
+    color: #3572A5;
+}
+
+.fa-database {
+    color: #4479A1;
+}
+
+.fa-bootstrap {
+    color: #7952B3;
+}
+
+.fa-wind {
+    color: #38B2AC;
+}
+
+.fa-vuejs {
+    color: #4FC08D;
+}
+
