@@ -9,36 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <title>Lucas Alves</title>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("cu17r5y9QKLHIvYoR");
-        })();
-    </script>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            // Coletando dados do formulário
-            const templateParams = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                message: document.getElementById('message').value,
-            };
-
-            // Enviando o email
-            emailjs.send('service_3g23jfi', 'template_y7ontwx', templateParams)
-                .then(function (response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    alert('Email enviado com sucesso!');
-                }, function (error) {
-                    console.log('FAILED...', error);
-                    alert('Erro ao enviar email.');
-                });
-        });
-    </script>
-
 
 </head>
 
@@ -422,12 +392,37 @@
         <p class="text-center">Desenvolvido por <a href="https://github.com/Lucas19Alves"> Lucas Alves</a></p>
     </footer>
 
-
-
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("cu17r5y9QKLHIvYoR");
+        })();
+    </script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Coletando dados do formulário
+            const templateParams = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value,
+            };
+
+            // Enviando o email
+            emailjs.send('service_3g23jfi', 'template_y7ontwx', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Email enviado com sucesso!');
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    alert('Erro ao enviar email.');
+                });
+        });
+    </script>
 
 </body>
 
