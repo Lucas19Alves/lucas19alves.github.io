@@ -8,106 +8,115 @@
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <title>Lucas Alves</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("cu17r5y9QKLHIvYoR");
+        })();
+    </script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Coletando dados do formulário
+            const templateParams = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value,
+            };
+
+            // Enviando o email
+            emailjs.send('service_3g23jfi', 'template_y7ontwx', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Email enviado com sucesso!');
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    alert('Erro ao enviar email.');
+                });
+        });
+    </script>
+
+
 </head>
 
 <body>
 
-    <nav class="bg-purple-700 fixed top-0 w-full lg:block hidden">
-        <ul class="flex justify-evenly text-white font-bold py-6">
-            <li>
-                <a href="#sobre" class="p-6 hover:text-purple-950">SOBRE MIM</a>
-            </li>
-            |
-            <li>
-                <a href="#estudos" class="p-6 hover:text-purple-950">ESTUDOS</a>
-            </li>
-            |
-            <li>
-                <a href="#carreira" class="p-6 hover:text-purple-950">CARREIRA</a>
-            </li>
-            |
-            <li>
-                <a href="#habilidades" class="p-6 hover:text-purple-950">HABILIDADES</a>
-            </li>
-            |
-            <li>
-                <a href="#linguagens" class="p-6 hover:text-purple-950">LINGUAGENS</a>
-            </li>
-            |
-            <li>
-                <a href="#projetos" class="p-6 hover:text-purple-950">PROJETOS</a>
-            </li>
-            |
-            <li>
-                <a href="#contato" class="p-6 hover:text-purple-950">CONTATO</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="contatofloat">
+        <a href="#contato" class="px-6 py-4 rounded-lg text-2xl text-white font-bold bg-purple-500">Contato <i
+                class="ms-2 fa fa-paper-plane"></i></a>
+    </div>
 
-    <section class="bg-purple-600 min-w-96">
-        <div class="flex justify-center py-40">
-            <div class="flex-col bg-white rounded-xl px-1 pt-1 pb-14">
-                <img src="./src/imagens/lucas.jpeg" alt="Lucas Alves"
-                    class="size-96 rounded-xl border-4 border-purple-300">
-                <p class="font-bold fa-2x text-center mt-6">Lucas Alves</p>
-                <p class="font-bold text-3xl text-center mt-2">Dev Full-Stack</p>
-                <div class="flex justify-around mt-12">
-                    <a href="https://wa.me/5577991156978" target="_blank"
-                        class="text-green-700 ho4er:text-xl duration-300">
-                        <i class="fab bg-white p-2 rounded-xl fa-whatsapp fa-3x"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/lucaas19alves/" target="_blank"
-                        class="text-blue-900 hov4r:text-xl duration-300">
-                        <i class="fab bg-white p-2 rounded-xl fa-linkedin fa-3x"></i>
-                    </a>
-                    <a href="https://github.com/Lucas19Alves" target="_blank"
-                        class="text-black hover:4ext-xl duration-300">
-                        <i class="fab bg-white p-2 rounded-xl fa-github fa-3x"></i>
-                    </a>
+    <section class="bg-gray-100 min-w-96">
+        <div class="flex justify-center py-20">
+            <div class="flex flex-row bg-white rounded-xl mx-8" id="lucas">
+                <div class="flex flex-col">
+                    <p class="fa-2x text-center mt-6 px-6">Olá, me chame de <span class="font-bold">Lucas</span>!</p>
+                    <p class="text-2xl text-center subtexto mt-2">Um desenvolvedor Full-Stack</p>
+                    <p class="text-center mt-2 px-6 subtexto text-wrap">Sou um cara apaixonado jogos e programação que
+                        desde muito cedo sempre sonhou em viver a vida imerso em ambas as coisas.</p>
+                    <div class="flex justify-center gap-6 mt-12">
+                        <a href="https://wa.me/5577991156978" target="_blank" class="text-purple-500">
+                            <i class="fab bg-white p-2 rounded-xl fa-whatsapp fa-2x"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucaas19alves/" target="_blank" class="text-purple-500">
+                            <i class="fab bg-white p-2 rounded-xl fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://github.com/Lucas19Alves" target="_blank" class="text-purple-500">
+                            <i class="fab bg-white p-2 rounded-xl fa-github fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <img src="./src/imagens/lucas.jpeg" alt="Lucas Alves"
+                        class="size-96 min-w-96 rounded-xl border-4 border-purple-300">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="bg-purple-600">
-        <p class="text-center text-white font-bold text-3xl">ME CONHEÇA MELHOR 🤗</p>
+    <section id="sobre" class="bg-gray-100">
+        <p class="text-center font-bold text-3xl"><i class="fa fa-arrow-down"></i> ME CONHEÇA MELHOR <i
+                class="fa fa-arrow-down"></i></p>
         <div class="flex justify-center pt-16">
-            <div class="bg-purple-500 p-12 mx-4 lg:mx-28 rounded-xl text-white font-bold">
-                <p>Olá! Meu nome é <span class="text-purple-950">Lucas Alves</span>.</p>
+            <div class="bg-purple-400  text-xl p-12 mx-4 lg:mx-28 rounded-xl ">
+                <p>Olá! Meu nome é <span class="text-purple-700">Lucas Alves</span>.</p>
                 <br>
-                <p>Sou um desenvolvedor <span class="text-purple-950">Full-stack</span>, apaixonado por programação e
+                <p>Sou um desenvolvedor <span class="text-purple-700">Full-stack</span>, apaixonado por programação e
                     tecnologia desde muito jovem.</p>
                 <br>
-                <p>Iniciei no mundo da programação há <span class="text-purple-950">2 anos</span>, buscando desenvolver
+                <p>Iniciei no mundo da programação há <span class="text-purple-700">2 anos</span>, buscando desenvolver
                     soluções para o meu dia a dia. Desde então, descobri que era desenvolvendo que eu queria viver a
                     minha vida.</p>
                 <br>
                 <p>
-                    Comecei desenvolvendo softwares mobile, como <span class="text-purple-950">conversores de preço e
+                    Comecei desenvolvendo softwares mobile, como <span class="text-purple-700">conversores de preço e
                         jogos casuais</span>. Nesse estágio, adquiri diversas habilidades, como <span
-                        class="text-purple-950">resolução de problemas, lógica de programação, e familiaridade com
+                        class="text-purple-700">resolução de problemas, lógica de programação, e familiaridade com
                         frameworks móveis</span>.
                 </p>
                 <br>
                 <p>
                     Com a paixão pelo desenvolvimento de softwares crescendo, decidi dar início à minha faculdade na
-                    área. Comecei meus estudos de <span class="text-purple-950">Desenvolvimento Mobile na UNOPAR</span>.
+                    área. Comecei meus estudos de <span class="text-purple-700">Desenvolvimento Mobile na UNOPAR</span>.
                 </p>
                 <br>
                 <p>
                     Com o conhecimento em crescimento, descobri também outros campos da programação e decidi iniciar uma
-                    jornada pelo <span class="text-purple-950">Front-end</span>.
+                    jornada pelo <span class="text-purple-700">Front-end</span>.
                 </p>
                 <br>
                 <p>
-                    Após desenvolver vários sites, como <span class="text-purple-950">landing pages, portfólios,
+                    Após desenvolver vários sites, como <span class="text-purple-700">landing pages, portfólios,
                         cardápios e sistemas</span>, descobri minha facilidade em lidar com o <span
-                        class="text-purple-950">Back-end</span> e decidi aprender mais sobre essa nova área.
+                        class="text-purple-700">Back-end</span> e decidi aprender mais sobre essa nova área.
                 </p>
                 <br>
                 <p>
                     Desde então, aprimorei diversos dos meus projetos, estudei novas linguagens e me preparei para
-                    demonstrar cada uma das minhas competências, tornando-me assim um <span class="text-purple-950">Dev
+                    demonstrar cada uma das minhas competências, tornando-me assim um <span class="text-purple-700">Dev
                         Full-stack</span>.
                 </p>
             </div>
@@ -115,15 +124,15 @@
     </section>
 
 
-    <section id="estudos" class="bg-purple-600 py-12">
-        <p class="text-center text-white font-bold text-3xl py-16">MEUS CURSOS E FACULDADES 📚</p>
+    <section id="estudos" class="bg-gray-100 py-12">
+        <p class="text-center font-bold text-3xl py-16">MEUS CURSOS E FACULDADES 📚</p>
         <div class="flex flex-wrap justify-center gap-4">
-            <div class="bg-purple-500 px-6 py-4 rounded-xl text-white font-bold mb-4 md:mb-0">
+            <div class="bg-purple-300 px-6 py-4 rounded-xl text-xl mb-4 md:mb-0">
                 <img src="./src/imagens/udemy.png" alt="logo udemy" class="rounded-xl w-full h-48">
                 <p class="my-2">Curso de Desenvolvimento Web - Udemy</p>
                 <p>6 meses - 2022</p>
             </div>
-            <div class="bg-purple-500 px-6 py-4 rounded-xl text-white font-bold">
+            <div class="bg-purple-300 px-6 py-4 rounded-xl text-xl">
                 <img src="./src/imagens/unopar.png" alt="logo unopar" class="rounded-xl w-full h-48">
                 <p class="my-2">Tecnólogo de Desenvolvimento Mobile - Unopar</p>
                 <p>2 anos - 2023</p>
@@ -131,15 +140,15 @@
         </div>
     </section>
 
-    <section id="carreira" class="bg-purple-600 py-12">
-        <p class="text-center text-white font-bold text-3xl py-16">MINHAS EXPERIÊNCIAS ATÉ AGORA 💼</p>
+    <section id="carreira" class="bg-gray-100 py-12">
+        <p class="text-center font-bold text-3xl py-16">MINHAS EXPERIÊNCIAS ATÉ AGORA 💼</p>
         <div class="flex flex-wrap justify-center gap-4">
-            <div class="bg-purple-500 px-6 py-4 rounded-xl text-white font-bold mb-4 md:mb-0">
+            <div class="bg-purple-400 px-6 py-4 rounded-xl  text-xl mb-4 md:mb-0">
                 <img src="./src/imagens/mdlogo.png" alt="logo midiadev" class="rounded-xl w-full h-48">
                 <p class="my-2">Desenvolvedor Front-end - MídiaDev</p>
                 <p>1 ano, 2023 - 2024</p>
             </div>
-            <div class="bg-purple-500 px-6 py-4 rounded-xl text-white font-bold">
+            <div class="bg-purple-400 px-6 py-4 rounded-xl text-xl">
                 <img src="./src/imagens/mb.png" alt="logo minas bahia" class="rounded-xl w-full h-48">
                 <p class="my-2">Gerente Geral - Hotel Minas Bahia</p>
                 <p>3 anos, 2022 - 2024</p>
@@ -147,20 +156,31 @@
         </div>
     </section>
 
-    <section id="habilidades" class="bg-purple-500 py-12">
-        <p class="text-center text-white font-bold text-3xl py-16">SOFT SKILL'S 🧠</p>
+    <section id="habilidades" class="bg-purple-400 rounded-t-xl py-12">
+        <p class="text-center text-white font-bold text-3xl py-16">CARREIRA 🧠</p>
         <div class="flex flex-col md:flex-row mx-4 justify-evenly gap-4">
-            <p class="p-2 bg-purple-600 rounded-xl text-white font-bold text-center md:p-4">Gerenciamento de grupo</p>
-            <p class="p-2 bg-purple-600 rounded-xl text-white font-bold text-center md:p-4">Pensamento análitico</p>
-            <p class="p-2 bg-purple-600 rounded-xl text-white font-bold text-center md:p-4">Resolução de Problemas</p>
-            <p class="p-2 bg-purple-600 rounded-xl text-white font-bold text-center md:p-4">Adaptabilidade</p>
-            <p class="p-2 bg-purple-600 rounded-xl text-white font-bold text-center md:p-4">Gestão de Tempo</p>
-            <p class="p-2 bg-purple-600 rounded-xl text-white font-bold text-center md:p-4">Aprendizado Contínuo</p>
+            <div class="p-2 bg-purple-600 rounded-xl text-white text-center md:p-4">
+                <p class="font-bold text-3xl">+ 02</p>
+                <p>Anos de experiência</p>
+            </div>
+            <div class="p-2 bg-purple-600 rounded-xl text-white text-center md:p-4">
+                <p class="font-bold text-3xl">+ 04</p>
+                <p>Projetos completos</p>
+            </div>
+            <div class="p-2 bg-purple-600 rounded-xl text-white text-center md:p-4">
+                <p class="font-bold text-3xl">+ 02</p>
+                <p>Empresas trabalhadas</p>
+            </div>
+            <div class="p-2 bg-purple-600 rounded-xl text-white text-center md:p-4">
+                <p class="font-bold text-3xl">+ 300</p>
+                <p>Xícaras de café</p>
+            </div>
+
         </div>
     </section>
 
-    <section id="linguagens" class="bg-purple-500 py-12">
-        <p class="text-center text-white font-bold text-3xl py-16">MINHAS LINGUAGENS 📝</p>
+    <section id="linguagens" class="bg-purple-400 pt-12 pb-16">
+        <p class="text-center text-white font-bold text-3xl py-16">MINHAS LINGUAGENS E FRAMEWORKS 📝</p>
         <div class="flex flex-wrap justify-center gap-4">
             <div class="bg-purple-600 p-4 rounded-xl text-white text-center w-48 flex flex-col">
                 <i class="bg-white p-2 rounded-xl fab fa-html5 fa-5x"></i>
@@ -188,9 +208,19 @@
                 <p>2 anos</p>
             </div>
             <div class="bg-purple-600 p-4 rounded-xl text-white text-center w-48 flex flex-col">
+                <i class="bg-white p-2 rounded-xl fab fa-angular fa-5x"></i>
+                <b>Angular</b>
+                <p>2 anos</p>
+            </div>
+            <div class="bg-purple-600 p-4 rounded-xl text-white text-center w-48 flex flex-col">
+                <i class="bg-white p-2 rounded-xl fab fa-vuejs fa-5x"></i>
+                <b>Vue.JS</b>
+                <p>2 anos</p>
+            </div>
+            <div class="bg-purple-600 p-4 rounded-xl text-white text-center w-48 flex flex-col">
                 <i class="bg-white p-2 rounded-xl fab fa-php fa-5x"></i>
                 <b>PHP</b>
-                <p>2 anos</p>
+                <p>1 anos</p>
             </div>
             <div class="bg-purple-600 p-4 rounded-xl text-white text-center w-48 flex flex-col">
                 <i class="bg-white p-2 rounded-xl fab fa-python fa-5x"></i>
@@ -200,7 +230,7 @@
             <div class="bg-purple-600 p-4 rounded-xl text-white text-center w-48 flex flex-col">
                 <i class="bg-white p-2 rounded-xl fa fa-database fa-5x"></i>
                 <b>MySQL</b>
-                <p>2 anos</p>
+                <p>1 anos</p>
             </div>
             <div class="bg-purple-600 p-4 rounded-xl text-white text-center w-48 flex flex-col">
                 <i class="bg-white p-2 rounded-xl fab fa-bootstrap fa-5x"></i>
@@ -212,18 +242,14 @@
                 <b>TailwindCSS</b>
                 <p>2 anos</p>
             </div>
-            <div class="bg-purple-600 p-4 rounded-xl text-white text-center w-48 flex flex-col">
-                <i class="bg-white p-2 rounded-xl fab fa-vuejs fa-5x"></i>
-                <b>Vue.JS</b>
-                <p>2 anos</p>
-            </div>
+
         </div>
     </section>
 
-    <section id="projetos" class="bg-purple-600 text-center py-12">
+    <section id="projetos" class="bg-purple-500 rounded-t-xl text-center py-12">
         <p class="text-white font-bold text-3xl py-16">MEUS PROJETOS 💻</p>
         <div class="flex flex-wrap justify-center gap-4">
-            <div class="bg-purple-500 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
+            <div class="bg-purple-600 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
                 <p class="text-3xl font-bold">Lista de Tarefas</p>
                 <div class="flex justify-center mt-2 gap-4">
                     <i class="fab fa-html5 fa-2x"></i>
@@ -234,14 +260,16 @@
                 <p>Lista de tarefas básica onde o usuário pode adicionar anotações e tarefas.</p>
                 <div class="mt-auto">
                     <a href="https://github.com/Lucas19Alves/sorteio"
-                    class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors" target="_blank">Ver
-                    Repositório</a>
+                        class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors"
+                        target="_blank">Ver
+                        Repositório</a>
                     <a href="./src/projetos/to-do/index.html"
-                    class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors" target="_blank">Abrir</a>
+                        class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors"
+                        target="_blank">Abrir</a>
                 </div>
             </div>
-    
-            <div class="bg-purple-500 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
+
+            <div class="bg-purple-600 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
                 <p class="text-3xl font-bold">Calculadora</p>
                 <div class="flex justify-center mt-2 gap-4">
                     <i class="fab fa-html5 fa-2x"></i>
@@ -252,14 +280,16 @@
                 <p>Calculadora web completa utilizando JavaScript.</p>
                 <div class="mt-auto">
                     <a href="https://github.com/Lucas19Alves/calculadora"
-                    class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors" target="_blank">Ver
-                    Repositório</a>
+                        class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors"
+                        target="_blank">Ver
+                        Repositório</a>
                     <a href="./src/projetos/calculadora/index.html"
-                    class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors" target="_blank">Abrir</a>
+                        class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors"
+                        target="_blank">Abrir</a>
                 </div>
             </div>
-    
-            <div class="bg-purple-500 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
+
+            <div class="bg-purple-600 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
                 <p class="text-3xl font-bold">Cardápio</p>
                 <div class="flex justify-center mt-2 gap-4">
                     <i class="fab fa-html5 fa-2x"></i>
@@ -268,17 +298,20 @@
                     <i class="fa fa-wind fa-2x"></i>
                 </div>
                 <img src="./src/imagens/lanchonete.png" alt="cardapio" class="rounded-xl my-4">
-                <p>Cardápio de uma lanchonete com funcionalidades de horário de funcionamento e pedidos via WhatsApp.</p>
+                <p>Cardápio de uma lanchonete com funcionalidades de horário de funcionamento e pedidos via WhatsApp.
+                </p>
                 <div class="mt-auto">
                     <a href="https://github.com/Lucas19Alves/cardapio"
-                    class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors" target="_blank">Ver
-                    Repositório</a>
+                        class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors"
+                        target="_blank">Ver
+                        Repositório</a>
                     <a href="./src/projetos/cardapio/index.html"
-                    class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors" target="_blank">Abrir</a>
+                        class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors"
+                        target="_blank">Abrir</a>
                 </div>
             </div>
-    
-            <div class="bg-purple-500 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
+
+            <div class="bg-purple-600 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
                 <p class="text-3xl font-bold">Sorteio</p>
                 <div class="flex justify-center mt-2 gap-4">
                     <i class="fab fa-html5 fa-2x"></i>
@@ -289,14 +322,16 @@
                 <p>Site de sorteio numérico com JavaScript para sortear números aleatoriamente.</p>
                 <div class="mt-auto">
                     <a href="https://github.com/Lucas19Alves/sorteio"
-                    class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors" target="_blank">Ver
-                    Repositório</a>
+                        class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors"
+                        target="_blank">Ver
+                        Repositório</a>
                     <a href="./src/projetos/sorteio/index.html"
-                    class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors" target="_blank">Abrir</a>
+                        class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors"
+                        target="_blank">Abrir</a>
                 </div>
             </div>
-    
-            <div class="bg-purple-500 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
+
+            <div class="bg-purple-600 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
                 <p class="text-3xl font-bold">MídiaDev</p>
                 <div class="flex justify-center mt-2 gap-4">
                     <i class="fab fa-html5 fa-2x"></i>
@@ -309,11 +344,12 @@
                 <p>Site de uma empresa de marketing, design e desenvolvimento de sites.</p>
                 <div class="mt-auto">
                     <a href="https://midiadev.com.br/"
-                    class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors" target="_blank">Acessar o site</a>
+                        class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors"
+                        target="_blank">Acessar o site</a>
                 </div>
             </div>
-    
-            <div class="bg-purple-500 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
+
+            <div class="bg-purple-600 px-6 py-4 rounded-xl text-white font-bold mb-4 md:w-1/3">
                 <p class="text-3xl font-bold">PMS de Hotel</p>
                 <div class="flex justify-center mt-2 gap-4">
                     <i class="fab fa-html5 fa-2x"></i>
@@ -327,15 +363,45 @@
                     quartos.</p>
                 <div class="mt-auto">
                     <a href="https://github.com/Lucas19Alves/sistema-hotel-mb"
-                    class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors" target="_blank">Ver
-                    Repositório</a>
+                        class="bg-white text-purple-600 font-bold py-2 px-4 rounded-full mt-4 inline-block hover:bg-purple-200 transition-colors"
+                        target="_blank">Ver
+                        Repositório</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contato" class="bg-purple-500  py-12 text-center">
-        <p class="text-3xl font-bold mb-4 text-white">ENTRE EM CONTATO 📧</p>
+    <section id="contato" class="bg-purple-600  py-12 text-center">
+        <div class="container mx-auto px-6 text-white text-center">
+            <h2 class="text-4xl font-bold mb-4">Entre em Contato</h2>
+            <p class="text-lg mb-8">Vamos conversar sobre como posso ajudar a transformar suas ideias em soluções
+                digitais.</p>
+            <form id="contactForm" class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <input type="text" id="name"
+                        class="w-full p-3 rounded-lg bg-gray-100 text-gray-700 placeholder-gray-500"
+                        placeholder="Seu Nome" autocomplete="name">
+                </div>
+                <div class="mb-4">
+                    <input type="email" id="email"
+                        class="w-full p-3 rounded-lg bg-gray-100 text-gray-700 placeholder-gray-500"
+                        placeholder="Seu Email" autocomplete="email">
+                </div>
+                <div class="mb-4">
+                    <input type="tel" id="phone"
+                        class="w-full p-3 rounded-lg bg-gray-100 text-gray-700 placeholder-gray-500"
+                        placeholder="Seu Telefone" autocomplete="tel">
+                </div>
+                <div class="mb-4">
+                    <textarea id="message" class="w-full p-3 rounded-lg bg-gray-100 text-gray-700 placeholder-gray-500"
+                        rows="5" placeholder="Sua Mensagem" autocomplete="off"></textarea>
+                </div>
+                <button
+                    class="bg-white text-purple-700 font-bold py-3 px-6 rounded-full hover:bg-purple-200 transition duration-300">
+                    Enviar Mensagem
+                </button>
+            </form>
+        </div>
         <div class="flex justify-center gap-6 mt-6">
             <a href="mailto:lucaas19alves@gmail.com" class="bg-white rounded-xl p-4" target="_blank">
                 <i class="fas fa-envelope-open-text fa-3x"></i>
@@ -355,8 +421,8 @@
     <footer class="bg-purple-500 text-white p-4">
         <p class="text-center">Desenvolvido por <a href="https://github.com/Lucas19Alves"> Lucas Alves</a></p>
     </footer>
-    
-    
+
+
 
 
 

@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    min-width: 780px;
+}
+
+#lucas{
+    max-width: 800px;
+}
+
+#projetos {
+    margin-top: -10px;
+}
+.contatofloat {
+    position: fixed;
+    left: -10px;
+    top: 20px;
+    transition: left 0.3s ease;
+}
+
+.contatofloat:hover {
+    left: 10px;
+}
+
+
 .fa-html5 {
     color: #ec6231;
 }
@@ -48,5 +72,9 @@
 
 .fa-vuejs {
     color: #4FC08D;
+}
+
+.subtexto {
+ color: rgb(107, 107, 107);
 }
 
